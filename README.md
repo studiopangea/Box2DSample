@@ -1,0 +1,13 @@
+Studio Pangea Ninja Demo
+========================
+
+This is a demonstration of cocos2d-x, based on a hybrid project (Android / iOS) [Chapter 1].
+
+Deprecated and obsolete functions/methods fixed for Cocos2D-x 2.0.2.
+
+Box2D Demostration
+------------------
+
+This is the default Cocos2D-x / Box2D project using XCode4 templates.
+
+* Exit button added
