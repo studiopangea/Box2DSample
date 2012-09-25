@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.studiopangea.demo;
+package com.studiopangea.demo.box2dsample;
 
 public final class R {
     public static final class attr {
