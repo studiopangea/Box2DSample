@@ -1,10 +1,9 @@
 //
-//  HelloWorldScene.h
-//  PruebaBox2d
+//  Created by Gonzalo Diaz Cruz on 04-09-12.
+//  Copyright Studio Pangea 2012. All rights reserved.
+//  http://www.studiopangea.com/
 //
-//  Created by Gonzalo Diaz Cruz on 12-09-12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
-//
+
 #ifndef __HELLO_WORLD_H__
 #define __HELLO_WORLD_H__
 
@@ -30,6 +29,9 @@ public:
     
     // returns a Scene that contains the HelloWorld as the only child
     static cocos2d::CCScene* scene();
+    
+    // a selector callback
+    void menuCloseCallback(CCObject* pSender);
     
     void initPhysics();
     // adds a new sprite at a given coordinate

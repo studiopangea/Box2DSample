@@ -1,10 +1,9 @@
 //
-//  HelloWorldScene.cpp
-//  PruebaBox2d
+//  Created by Gonzalo Diaz Cruz on 04-09-12.
+//  Copyright Studio Pangea 2012. All rights reserved.
+//  http://www.studiopangea.com/
 //
-//  Created by Gonzalo Diaz Cruz on 12-09-12.
-//  Copyright __MyCompanyName__ 2012. All rights reserved.
-//
+
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
@@ -73,6 +72,30 @@ HelloWorld::HelloWorld()
     setAccelerometerEnabled( true );
     
     CCSize s = CCDirector::sharedDirector()->getWinSize();
+    
+    CCSize visibleSize = CCDirector::sharedDirector()->getVisibleSize();
+    CCPoint origin = CCDirector::sharedDirector()->getVisibleOrigin();
+    
+    // add a "close" icon to exit the progress. it's an autorelease object
+    CCMenuItemImage *pCloseItem = CCMenuItemImage::create(
+                                                          "CloseNormal.png",
+                                                          "CloseSelected.png",
+                                                          this,
+                                                          menu_selector(HelloWorld::menuCloseCallback));
+    if (CCApplication::sharedApplication().isIos() && !CCApplication::sharedApplication().isIpad())
+    {
+        pCloseItem->setPosition(ccp(visibleSize.width - 20 + origin.x, 20 + origin.y));
+    }
+    else
+    {
+        pCloseItem->setPosition(ccp(visibleSize.width - 40 + origin.x, 40 + origin.y));
+    }
+    
+    // create menu, it's an autorelease object
+    CCMenu* pMenu = CCMenu::create(pCloseItem, NULL);
+    pMenu->setPosition(CCPointZero);
+    this->addChild(pMenu, 1);
+    
     // init physics
     this->initPhysics();
     
@@ -80,6 +103,8 @@ HelloWorld::HelloWorld()
     m_pSpriteTexture = parent->getTexture();
     
     addChild(parent, 0, kTagParentNode);
+    
+    
     
     
     addNewSpriteAtPosition(ccp(s.width/2, s.height/2));
@@ -273,3 +298,13 @@ CCScene* HelloWorld::scene()
     
     return scene;
 }
+
+void HelloWorld::menuCloseCallback(CCObject* pSender)
+{
+    CCDirector::sharedDirector()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
+}
+
