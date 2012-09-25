@@ -10,4 +10,7 @@ Box2D Demostration
 
 This is the default Cocos2D-x / Box2D project using XCode4 templates.
 
+* Use Box2D
 * Exit button added
+
+[Chapter 1]: http://www.cocos2d-x.org/projects/cocos2d-x/wiki/Chapter_1_-_How_to_Create_a_New_cocos2d-x_project_on_multi-platforms
