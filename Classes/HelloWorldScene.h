@@ -30,13 +30,10 @@ public:
     // returns a Scene that contains the HelloWorld as the only child
     static cocos2d::CCScene* scene();
     
-    // a selector callback
-    void menuCloseCallback(CCObject* pSender);
-    
     void initPhysics();
     // adds a new sprite at a given coordinate
     void addNewSpriteAtPosition(cocos2d::CCPoint p);
-    
+
     virtual void draw();
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     void update(float dt);
@@ -47,3 +44,4 @@ private:
 };
 
 #endif // __HELLO_WORLD_H__
+

@@ -1,5 +1,5 @@
 //
-//  Created by Gonzalo Diaz Cruz on 04-09-12.
+//  Created by Gonzalo Diaz Cruz on 30-09-12.
 //  Copyright Studio Pangea 2012. All rights reserved.
 //  http://www.studiopangea.com/
 //
@@ -24,7 +24,7 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
-    pDirector->setOpenGLView(&CCEGLView::sharedOpenGLView());
+    pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
 
     // enable High Resource Mode(2x, such as iphone4) and maintains low resource on other devices.
     // pDirector->enableRetinaDisplay(true);
@@ -47,16 +47,16 @@ bool AppDelegate::applicationDidFinishLaunching()
 // This function will be called when the app is inactive. When comes a phone call,it's be invoked too
 void AppDelegate::applicationDidEnterBackground()
 {
-    CCDirector::sharedDirector()->pause();
+    CCDirector::sharedDirector()->stopAnimation();
 
-    // if you use SimpleAudioEngine, it must be pause
+    // if you use SimpleAudioEngine, it must be paused
     // SimpleAudioEngine::sharedEngine()->pauseBackgroundMusic();
 }
 
 // this function will be called when the app is active again
 void AppDelegate::applicationWillEnterForeground()
 {
-    CCDirector::sharedDirector()->resume();
+    CCDirector::sharedDirector()->startAnimation();
     
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::sharedEngine()->resumeBackgroundMusic();
