@@ -4,10 +4,14 @@
       android:versionCode="1"
       android:versionName="1.0">
 
-    <uses-sdk android:minSdkVersion="8"/>
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="10"/>
 
+    <supports-screens android:largeScreens="true"
+                      android:smallScreens="true"
+                      android:anyDensity="true"
+                      android:normalScreens="true"/>
+    
     <application android:label="@string/app_name"
-        android:debuggable="true"
         android:icon="@drawable/icon">
 
         <activity android:name=".Box2DSample"
@@ -21,8 +25,4 @@
             </intent-filter>
         </activity>
     </application>
-    <supports-screens android:largeScreens="true"
-                      android:smallScreens="true"
-                      android:anyDensity="true"
-                      android:normalScreens="true"/>
 </manifest> 
