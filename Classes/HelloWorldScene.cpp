@@ -70,6 +70,7 @@ HelloWorld::HelloWorld()
 {
     setTouchEnabled( true );
     setAccelerometerEnabled( true );
+    setKeypadEnabled( true );
 
     CCSize s = CCDirector::sharedDirector()->getWinSize();
     // init physics
@@ -272,3 +273,15 @@ CCScene* HelloWorld::scene()
     
     return scene;
 }
+
+void HelloWorld::keyBackClicked()
+{
+	CCLog("Back clicked");
+
+    CCDirector::sharedDirector()->end();
+
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
+}
+
