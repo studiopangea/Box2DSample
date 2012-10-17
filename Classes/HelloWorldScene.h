@@ -38,6 +38,8 @@ public:
     virtual void ccTouchesEnded(cocos2d::CCSet* touches, cocos2d::CCEvent* event);
     void update(float dt);
     
+    virtual void keyBackClicked();
+
 private:
     b2World* world;
     cocos2d::CCTexture2D* m_pSpriteTexture; // weak ref
