@@ -53,7 +53,8 @@ CCAffineTransform PhysicsSprite::nodeToParentTransform(void)
     float c = cosf(radians);
     float s = sinf(radians);
 
-    if( ! CCPoint::CCPointEqualToPoint(m_tAnchorPointInPoints, CCPointZero) ){
+    if( ! CCPointZero.equals(m_tAnchorPointInPoints) )
+    {
         x += c*-m_tAnchorPointInPoints.x + -s*-m_tAnchorPointInPoints.y;
         y += s*-m_tAnchorPointInPoints.x + c*-m_tAnchorPointInPoints.y;
     }

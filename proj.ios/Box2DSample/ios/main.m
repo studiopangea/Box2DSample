@@ -1,8 +1,8 @@
 //
 //  main.m
-//  ProjectTemplate
+//  Box2DSample
 //
-//  Created by Gonzalo Diaz Cruz on 30-09-12.
+//  Created by Fernando Rojas Harnisch on 24-09-12.
 //  Copyright __MyCompanyName__ 2012. All rights reserved.
 //
 

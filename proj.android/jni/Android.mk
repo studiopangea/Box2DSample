@@ -19,5 +19,4 @@ include $(BUILD_SHARED_LIBRARY)
 $(call import-module,CocosDenshion/android) \
 $(call import-module,cocos2dx) \
 $(call import-module,extensions) \
-$(call import-module,external/Box2D)
-
+$(call import-module,Box2D)
